@@ -36,6 +36,7 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// 從 ./static 靜態檔案裡找到 index.html
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/form", formHandler)
